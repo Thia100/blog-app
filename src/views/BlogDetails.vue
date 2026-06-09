@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="p-4">
     <Navigation />
     <p v-if="loading">Loading...</p>
-    <div v-else class="">
-       <h2> {{ getPost.title }}</h2>
+    <div v-else class="bg-gray-300 p-4 rounded-2xl">
+       <h2 class="text-2xl mb-4"> {{ getPost.title }}</h2>
        <p> {{ getPost.content }}</p>
     </div>
   </div>

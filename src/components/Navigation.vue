@@ -1,12 +1,15 @@
 <template>
-  <div class="text-center my-6">
-    <button @click="redirect" class="mr-4 text-xl cursor-pointer">Home</button>
-    <button @click="back" class="cursor-pointer text-xl">
-      <FontAwesomeIcon icon="arrow-left" />
-    </button>
-    <button @click="forward" class="cursor-pointer text-xl">
-      <font-awesome-icon icon="arrow-right" />
-    </button>
+  <div class="text-center my-6 flex justify-center gap-2">
+    <button @click="redirect" class="mr-4 text-2xl cursor-pointer">Home</button>
+
+    <div class="flex gap-2">
+      <button @click="back" class="cursor-pointer text-2xl">
+        <FontAwesomeIcon icon="arrow-left" />
+      </button>
+      <button @click="forward" class="cursor-pointer text-2xl">
+        <font-awesome-icon icon="arrow-right" />
+      </button>
+    </div>
   </div>
 </template>
 

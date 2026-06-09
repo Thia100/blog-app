@@ -13,39 +13,47 @@ async function loadPosts(page = 1) {
     posts.value = response.data;
     loading.value = true;
 
-     totalPages.value = response.meta.totalPages;
+    totalPages.value = response.meta.totalPages;
     currentPage.value = response.meta.page;
   } catch (error) {
     console.log(error);
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 onMounted(async () => {
-  loadPosts()
+  loadPosts();
 });
 </script>
 
 <template>
-  <div class="mb-5">
+  <div class="my-8">
     <p v-if="loading">loading</p>
     <ul v-else>
-      <li
-        v-for="post in posts"
-        :key="post.id"
-        class="mb-5 border bg-gray-200 p-2 rounded-lg"
-      >
+      <li v-for="post in posts" :key="post.id" class="mb-12 py-4 px-2 border-b">
         <router-link :to="`/blog-card/${post.id}`">
-          <h2 class="text-xl mb-4">{{ post.title }}</h2>
+          <h2 class="text-xl mb-2">{{ post.title }}</h2>
           <p>{{ post.excerpt }}</p>
         </router-link>
       </li>
     </ul>
     <div>
-      <button @click="loadPosts(currentPage -1)" :disabled="currentPage === 1" class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"><font-awesome-icon icon="arrow-left" /></button>
+      <button
+        @click="loadPosts(currentPage - 1)"
+        :disabled="currentPage === 1"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
+      >
+        <font-awesome-icon icon="arrow-left" />
+      </button>
       <span>{{ currentPage }} of {{ totalPages }}</span>
-      <button @click="loadPosts(currentPage + 1)" :disabled="currentPage === totalPages"  class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"><font-awesome-icon icon="arrow-right" /></button>
+      <button
+        @click="loadPosts(currentPage + 1)"
+        :disabled="currentPage === totalPages"
+        class="px-4 py-2 bg-gray-200 rounded disabled:opacity-50 cursor-pointer"
+      >
+        <font-awesome-icon icon="arrow-right" />
+      </button>
     </div>
   </div>
 </template>

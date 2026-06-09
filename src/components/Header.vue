@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="mb-2 text-gray-700">Hi, Good day!</h1>
+  <div class="mt-6 mb-12">
+    <h1 class="mb-4 text-gray-700">Hi, Good day!</h1>
     <div
       class="bg-gray-100 rounded-2xl max-w-5xl w-full overflow-hidden shadow-lg"
     >
@@ -16,7 +16,7 @@
           <p class="text-2xl font-bold text-gray-900">
             Welcome to <span class="text-black">Blogilates</span>
           </p>
-          <p class="text-gray-800">Changing narratives one story at a time</p>
+          <p class="text-gray-600">Changing narratives one story at a time</p>
         </div>
       </div>
     </div>
