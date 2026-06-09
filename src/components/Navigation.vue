@@ -1,0 +1,30 @@
+<template>
+  <div class="text-center my-6">
+    <button @click="redirect" class="mr-4 text-xl cursor-pointer">Home</button>
+    <button @click="back" class="cursor-pointer text-xl">
+      <FontAwesomeIcon icon="arrow-left" />
+    </button>
+    <button @click="forward" class="cursor-pointer text-xl">
+      <font-awesome-icon icon="arrow-right" />
+    </button>
+  </div>
+</template>
+
+<script setup>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+function redirect() {
+  router.push({ name: "Home" });
+}
+function back() {
+  router.go(-1);
+}
+function forward() {
+  router.go(1);
+}
+</script>
