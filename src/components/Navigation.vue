@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center my-6 flex justify-center gap-2">
+  <div class=" my-6 gap-2 bg-white shadow-sm p-2 ">
     <button @click="redirect" class="mr-4 text-2xl cursor-pointer">Home</button>
 
     <div class="flex gap-2">

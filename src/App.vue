@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onErrorCaptured } from "vue";
+import Spinner from "./components/ui/Spinner.vue";
 
 const hasError = ref(false);
 
@@ -16,7 +17,7 @@ onErrorCaptured(() => {
   <Suspense v-else>
     <router-view />
     <template #fallback>
-      <p>Loading page...</p>
+      <Spinner />
     </template>
   </Suspense>
 </template>
