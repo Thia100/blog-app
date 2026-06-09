@@ -1,7 +1,22 @@
 <script setup>
+import { ref, onErrorCaptured } from "vue";
 
+const hasError = ref(false);
+
+onErrorCaptured(() => {
+  hasError.value = true;
+  return false;
+});
 </script>
 
 <template>
-  <router-view />
+  <div v-if="hasError">
+    <h1>Something went wrong.</h1>
+  </div>
+  <Suspense v-else>
+    <router-view />
+    <template #fallback>
+      <p>Loading page...</p>
+    </template>
+  </Suspense>
 </template>
